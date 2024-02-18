@@ -20,14 +20,24 @@ export class AppComponent implements AfterViewInit {
     let bg = this.document.getElementById('bg');
     let cliff = this.document.getElementById('cliff');
     let grad = this.document.getElementById('grad');
+    let p = this.document.getElementById('parallax');
     window.addEventListener('scroll', () => {
       var value = window.scrollY;
+      if (value > 800) value = 800;
       console.log(value);
 
-      bg.style.top = 0 + value * 1.24 + 'px';
-      cliff.style.top = 0 + value * 0.7 + 'px';
 
-      grad.style.height = 10 + value * 0.02  + 'vh';
+      let bgY = -210 + value * 1.24;
+      if (bgY > 0) bgY = 0;
+      bg.style.transform = "translateY(" + bgY + 'px)';
+
+      let cliffY = -270 + value * -0.5;
+      if (cliffY < -700) cliffY = -700;
+      cliff.style.transform = "translateY(" + cliffY + 'px)';
+      console.log(cliff.style.transform);
+
+      // grad.style.height = 10 + value * 0.02  + 'vh';
+      p.style.height = 100 -  (value * 0.11)  + 'vh';
     })
   }
 
