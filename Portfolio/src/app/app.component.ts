@@ -1,8 +1,6 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AfterViewInit, Component, HostListener, Inject } from '@angular/core';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { EventEmitter } from 'stream';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,30 +9,27 @@ import { Subject } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit, OnDestroy {
-  constructor() { 
-  }
-  ngOnDestroy(): void {
-    this.h.unsubscribe();
-  }
-  ngOnInit(): void {
-    console.log(this.x);
+export class AppComponent implements AfterViewInit {
+  constructor(@Inject(DOCUMENT) private document: Document) {}
+
+  ngAfterViewInit(): void {
+  
   }
 
-  h = new Subject<number>();
+  @HostListener("window:scroll") onScroll() {
+    let bg = this.document.getElementById('bg');
+    let cliff = this.document.getElementById('cliff');
+    let grad = this.document.getElementById('grad');
+    window.addEventListener('scroll', () => {
+      var value = window.scrollY;
+      console.log(value);
 
-  x = 0;
+      bg.style.top = 0 + value * 1.24 + 'px';
+      cliff.style.top = 0 + value * 0.7 + 'px';
 
-  // personalDesc: string = "I'm a Tunisian based web designer & front‑end  developer focused on crafting clean & user‑friendly experiences, I am passionate about building excellent software that improves the lives of those around me."
-  @ViewChild('background',  {static: true}) bg: ElementRef;
-  @ViewChild('gg',  {static: true}) grad: ElementRef;
+      grad.style.height = 10 + value * 0.02  + 'vh';
+    })
+  }
 
   
-  @HostListener('window:scroll', ['$event']) onScroll(_) {
-    var value = window.scrollY;
-    this.x = value;
-    console.log(this.x)
-  }
-
-
 }
