@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -18,9 +18,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
 
 header .logo {
+    position: relative;
     color: white;
     font-weight: 700;
     text-decoration: none;
@@ -30,18 +32,21 @@ header .logo {
 }
 
 header ul {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 header ul li {
+    position: relative;
     list-style: none;
     margin-left: 20px;
     z-index: 100;
 }
 
 header ul li a {
+    position: relative;
     text-decoration: none;
     padding: 6px 15px;
     color: white;
