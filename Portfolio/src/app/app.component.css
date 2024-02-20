@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-body {
-    background: black;
+#back {
+    background-color: black;
     min-height: 11750px;
 }
 
@@ -80,7 +80,7 @@ section img {
     top: 0;
     left: 0;
     width: 100%;
-    object-fit:cover;
+    object-fit: cover;
     pointer-events: none;
 }
 
@@ -93,9 +93,9 @@ section img#cliff {
 }
 
 p {
-    color: while;
+    color: white;
     font-size: 100px;
-    z-index: 100;
+    z-index: 1;
 }
 
 /* new ends here */
