@@ -14,7 +14,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 100px;
+    padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,6 +29,10 @@ header .logo {
     font-size: 2em;
     text-transform: uppercase;
     z-index: 100;
+}
+
+header .logo img {
+    width: 80px;
 }
 
 header ul {
@@ -56,12 +60,42 @@ section {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 1080px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* display: block; */
+}   
+
+#name {
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    font-size: 10em;
+    text-transform: uppercase;
+    font-family: "Protest Riot";
+    width: 100%;
+    top: 380px;
+    text-shadow: 7px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1200px;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#bg {
+    top: -210px;
+}
+
+section img#cliff {
+    top: -210px;
 }
 
 .grad {
@@ -69,244 +103,71 @@ section {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 10vh;
-    background: linear-gradient(to top, black, transparent);
+    height: 250px;
+    background: linear-gradient(to top, black 70px, black 100px, transparent);
     z-index: 10;
 }
 
 
-section img {
+#down-arrow {
+    color: white;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    object-fit: cover;
-    pointer-events: none;
-}
-
-section img#bg {
-    transform: translateY(-210px);
-}
-
-section img#cliff {
-    transform: translateY(-270px);
-}
-
-p {
-    color: white;
-    font-size: 100px;
-    z-index: 1;
-}
-
-/* new ends here */
-
-/* section img {
+    top: calc(100vh - 80px);
+    left: calc(50% - 14px);
+    width: 0;
+    border: 2px solid;
+    border-radius: 2px;
+  }
+  
+#down-arrow:after {
+    content: " ";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    top: -8px;
+    left: -18px;
+    width: 32px;
+    height: 32px;
+    border-bottom: 4px solid;
+    border-right: 4px solid;
+    border-radius: 9px;
+    transform: rotateZ(45deg);
+  }
 
+@keyframes jumpInfinite { 
+    0% {
+      margin-top: 0px;
+    }
+    50% {
+      margin-top: 20px;
+    }
+    100% {
+      margin-top: 0px;
+    }
+  }
 
-.person-name {
-    text-align: center;
-    color: #FFB400;
-    font-size: 65px;
-    line-height: 0;
-}
+  #down-arrow {
+    animation: jumpInfinite 1.5s infinite;
+  }
 
-.person-profession {
-    text-align: right;
-    padding-right: 41px;
-    font-size: 55px;
+  .divider {
+    height: 1080px;
+  }
+
+  p {
     color: white;
-}
+  }
 
-.group-head {
+  .about-me {
+   margin-left: 300px;
+   margin-top: 100px;
+  }
+
+  .sub-heading {
     color: white;
-    border: 5px solid;
-    position: relative;
-    width: 30%;
-    left: 35%;
-    border-color: transparent;
-} */
+    width: 300px;
+    margin-bottom: 24px;
+  }
 
-
-/* START ANIMATED BUTTON */
-/* .animated-arrow-cont {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    height: 100%;
-}
-
-.animated-arrow-cont:hover {
-    color: white;
-
-}
-
-.the-arrow {
-    width: 100px;
-    transition: all 0.2s;
-}
-
-.the-arrow.-left {
-    position: absolute;
-    top: 60%;
-    left: 0;
-}
-
-.the-arrow.-left>.shaft {
-    width: 0;
-    background-color: white;
-}
-
-.the-arrow.-left>.shaft:before,
-.the-arrow.-left>.shaft:after {
-    width: 0;
-    background-color: white;
-}
-
-.the-arrow.-left>.shaft:before {
-    transform: rotate(0);
-}
-
-.the-arrow.-left>.shaft:after {
-    transform: rotate(0);
-}
-
-.the-arrow.-right {
-    top: 3px;
-}
-
-.the-arrow.-right>.shaft {
-    width: 1px;
-    transition-delay: 0.2s;
-}
-
-.the-arrow.-right>.shaft:before,
-.the-arrow.-right>.shaft:after {
-    width: 8px;
-    transition-delay: 0.3s;
-    transition: all 0.5s;
-}
-
-.the-arrow.-right>.shaft:before {
-    transform: rotate(40deg);
-}
-
-.the-arrow.-right>.shaft:after {
-    transform: rotate(-40deg);
-}
-
-.the-arrow>.shaft {
-    background-color: white;
-    display: block;
-    height: 1px;
-    position: relative;
-    transition: all 0.2s;
-    transition-delay: 0;
-    will-change: transform;
-}
-
-.the-arrow>.shaft:before,
-.the-arrow>.shaft:after {
-    background-color: white;
-    content: '';
-    display: block;
-    height: 1px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: all 0.2s;
-    transition-delay: 0;
-}
-
-.the-arrow>.shaft:before {
-    transform-origin: top right;
-}
-
-.the-arrow>.shaft:after {
-    transform-origin: bottom right;
-}
-
-.animated-arrow {
-    display: inline-block;
-    color: white;
-    font-size: 1.25em;
-    font-style: italic;
-    text-decoration: none;
-    position: relative;
-    transition: all 0.2s;
-}
-
-.animated-arrow:hover {
-    color: white;
-}
-
-.animated-arrow:hover>.the-arrow.-left>.shaft {
-    width: 64px;
-    transition-delay: 0.1s;
-    background-color: white;
-}
-
-.animated-arrow:hover>.the-arrow.-left>.shaft:before,
-.animated-arrow:hover>.the-arrow.-left>.shaft:after {
-    width: 8px;
-    transition-delay: 0.1s;
-    background-color: white;
-}
-
-.animated-arrow:hover>.the-arrow.-left>.shaft:before {
-    transform: rotate(40deg);
-}
-
-.animated-arrow:hover>.the-arrow.-left>.shaft:after {
-    transform: rotate(-40deg);
-}
-
-.animated-arrow:hover>.main {
-    transform: translateX(17px);
-    transform: translateX(80px);
-}
-
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft {
-    width: 0;
-    transform: translateX(200%);
-    transition-delay: 0;
-}
-
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft:before,
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft:after {
-    width: 0;
-    transition-delay: 0;
-    transition: all 0.1s;
-}
-
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft:before {
-    transform: rotate(0);
-}
-
-.animated-arrow:hover>.main>.the-arrow.-right>.shaft:after {
-    transform: rotate(0);
-}
-
-.animated-arrow>.main {
-    display: flex;
-    align-items: center;
-    transition: all 0.2s;
-}
-
-.animated-arrow>.main>.text {
-    margin: 10px 16px 10px 0;
-    color: #FFB400;
-    line-height: 1;
-}
-
-.animated-arrow>.main>.the-arrow {
-    position: relative;
-} */
-/* END ANIMATED BUTTON */
+  .about-me-paragraph {
+    width: 30vw;
+    margin-bottom: 24px;
+  }

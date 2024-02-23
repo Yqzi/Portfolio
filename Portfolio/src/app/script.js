@@ -1,7 +1,10 @@
 let bg = document.getElementById('bg');
 let cliff = document.getElementById('cliff');
 let grad = document.getElementById('grad');
-let p = document.getElementById('parallax');
+let parallax = document.getElementById('parallax');
+
+let downArrow = document.getElementById("down-arrow")
+let myName = document.getElementById("name")
 
 window.addEventListener('scroll', () => {
   let value = window.scrollY;
@@ -11,14 +14,18 @@ window.addEventListener('scroll', () => {
 
   let bgY = -210 + value * 0.26;
   if (bgY < 0) {
-      bg.style.transform = "translateY(" + bgY + 'px)';
+      bg.style.top = bgY + 'px';
   }
 
-  let cliffY = -270 + value * -0.5;
+  let cliffY = -210 + value * -0.5;
   if (cliffY > -700) {
-    cliff.style.transform = "translateY(" + cliffY + 'px)';
+    cliff.style.top = cliffY + 'px';
   }
 
   // grad.style.height = 10 + value * 0.02  + 'vh';
-  p.style.height = 100 -  (value * 0.11)  + 'vh';
+  parallax.style.height = 1080 -  (value * 1.13)  + 'px';
+
+  downArrow.style.color = "rgba(255, 255, 255, "+ (750 - value*3) / 750 +")"
+  myName.style.color = "rgba(255, 255, 255, "+ (600 - value*2) / 750 +")"
+  myName.style.textShadow = "7px 2px 4px rgba(0, 0, 0, "+ (150 - value*2) / 750 +")"
 })
