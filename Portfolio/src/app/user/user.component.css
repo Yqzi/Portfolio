@@ -1,0 +1,19 @@
+p {
+    color: white;
+  }
+
+.about-me {
+    margin-left: 300px;
+    width: min-content;
+  }
+
+.sub-heading {
+color: white;
+width: 300px;
+margin-bottom: 24px;
+}
+
+.about-me-paragraph {
+    width: 30vw;
+    margin-bottom: 24px;
+  }

@@ -80,7 +80,7 @@ section {
     text-shadow: 7px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-section img {
+section>img {
     position: absolute;
     top: 0;
     left: 0;
@@ -90,11 +90,11 @@ section img {
     pointer-events: none;
 }
 
-section img#bg {
+section>img#bg {
     top: -210px;
 }
 
-section img#cliff {
+section>img#cliff {
     top: -210px;
 }
 
@@ -155,19 +155,15 @@ section img#cliff {
   p {
     color: white;
   }
-
-  .about-me {
-   margin-left: 300px;
-   margin-top: 100px;
-  }
-
+  
   .sub-heading {
     color: white;
     width: 300px;
     margin-bottom: 24px;
   }
 
-  .about-me-paragraph {
-    width: 30vw;
-    margin-bottom: 24px;
+  .row {
+    width: 100%;
+    margin-top: 100px;
+    /* background-color: yellow; */
   }
