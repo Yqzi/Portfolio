@@ -1,4 +1,31 @@
 * {
     color: white;
-    background-color: green;
+}
+
+.card {
+    height: 143px;
+    width: 262px;
+    border: solid;
+    border-color: #252525;
+    border-radius: 5px;
+    padding-top: 15px;
+    padding-right: 100px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+}
+
+.divider {
+    height: 1.5px;
+    width: 33px;
+    background-color: #848484;
+}
+
+.grid {
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: bold;
 }

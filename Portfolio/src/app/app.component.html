@@ -22,17 +22,34 @@
     </div>
 
     <div id="down-arrow"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
+    <div class="body">
+         <!-- ABOUT ME SECTION -->
+        <div class="grid grid-rows-1 grid-flow-col gap-16">
+            <div>
                 <div class="sub-heading">{{ user.name.toUpperCase() }}</div>
                 <p>{{ user.bio }}</p>
             </div>
-            <div class="col-lg-5">
-                <p>sdsdsdsddssd</p>
+            <div class="grid grid-rows-2 grid-flow-col gap-2.5">
+                <app-exp-card [years]="77"></app-exp-card>
+                <app-exp-card [years]="77"></app-exp-card>
+                <app-exp-card [years]="77"></app-exp-card>
+                <app-exp-card [years]="77"></app-exp-card>
             </div>
-             <!-- <app-exp-card></app-exp-card> -->
+        </div>
+        
+        <!-- MY SKILLS SECTION -->
+        <div class="grid grid-rows-2 grid-flow-col my-skills">
+            <div class="skill-div" *ngFor="let skill of skills">
+                <circle-progress [options]="options" [percent]="skill[1]"></circle-progress>
+                <p>{{ skill[0] }}</p>
+            </div>
+            <!-- <circle-progress [options]="options" [percent]="75"></circle-progress>
+            <circle-progress [options]="options" [percent]="75"></circle-progress>
+            <circle-progress [options]="options" [percent]="75"></circle-progress>
+            <circle-progress [options]="options" [percent]="75"></circle-progress>
+            <circle-progress [options]="options" [percent]="75"></circle-progress>
+            <circle-progress [options]="options" [percent]="75"></circle-progress>
+            <circle-progress [options]="options" [percent]="75"></circle-progress> -->
         </div>
     </div>
 </div>
-
