@@ -22,7 +22,6 @@ window.addEventListener('scroll', () => {
     cliff.style.top = cliffY + 'px';
   }
 
-  // grad.style.height = 10 + value * 0.02  + 'vh';
   parallax.style.height = 1080 -  (value * 1.13)  + 'px';
 
   downArrow.style.color = "rgba(255, 255, 255, "+ (750 - value*3) / 750 +")"

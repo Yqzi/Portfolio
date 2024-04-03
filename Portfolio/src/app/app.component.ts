@@ -5,13 +5,14 @@ import { ExpCardComponent } from './exp-card/exp-card.component';
 import { User } from './user.model';
 import { Skills } from "./skills";
 import { CircleProgressOptions, NgCircleProgressModule } from 'ng-circle-progress';
+import { ExpDetailsComponent } from './exp-details/exp-details.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, ExpCardComponent, NgCircleProgressModule],
+    imports: [CommonModule, RouterOutlet, ExpCardComponent, NgCircleProgressModule, ExpDetailsComponent],
     providers: [
       (NgCircleProgressModule.forRoot() as ModuleWithProviders<NgCircleProgressModule>).providers!,
     ]
