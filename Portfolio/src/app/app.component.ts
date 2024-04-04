@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { ExpCardComponent } from './exp-card/exp-card.component';
 import { User } from './user.model';
 import { Skills } from "./skills";
-import { CircleProgressOptions, NgCircleProgressModule } from 'ng-circle-progress';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ExpDetailsComponent } from './exp-details/exp-details.component';
 
 @Component({

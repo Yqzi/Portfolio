@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-exp-details',
   standalone: true,
-  imports: [],
+  imports: [MatIconModule ],
   templateUrl: './exp-details.component.html',
   styleUrl: './exp-details.component.css'
 })
@@ -14,7 +15,7 @@ export class ExpDetailsComponent {
   @Input('skillDesc') skillDesc: String;
 
   constructor() {
-    this.EndDate ?? 'PRESENT';
-    this.skillDesc ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt ut labore';
+    this.EndDate = this.EndDate ?? 'PRESENT'
+    this.skillDesc = this.skillDesc ?? 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do tempor incididunt ut labore';
   }
 }
