@@ -188,3 +188,20 @@ section>img#cliff {
  .experience {
   margin-top: 100px;
  }
+
+ .contact {
+  margin-top: 380px;
+  color: white;
+ }
+
+ .heading {
+  text-align: center;
+  font-size: 190px;
+  color: #848484;
+  opacity: 0.17;
+  font-weight: bold;
+ }
+
+ .contact-details {
+  width: 383px;
+ }

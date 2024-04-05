@@ -6,13 +6,15 @@ import { User } from './user.model';
 import { Skills } from "./skills";
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ExpDetailsComponent } from './exp-details/exp-details.component';
+import { MatIconModule } from '@angular/material/icon';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, ExpCardComponent, NgCircleProgressModule, ExpDetailsComponent],
+    imports: [CommonModule, RouterOutlet, ExpCardComponent, NgCircleProgressModule, ExpDetailsComponent, MatIconModule, ContactFormComponent],
     providers: [
       (NgCircleProgressModule.forRoot() as ModuleWithProviders<NgCircleProgressModule>).providers!,
     ]

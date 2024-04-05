@@ -1,0 +1,15 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1.2px solid #252525;
+    border-radius: 24px;
+    height: 559px;
+    width: 429px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ::ng-deep .mdc-notched-outline > * {
+    border-color: green !important;
+  }
