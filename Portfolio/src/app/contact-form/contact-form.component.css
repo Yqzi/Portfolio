@@ -10,6 +10,17 @@
     justify-content: center;
   }
 
-  ::ng-deep .mdc-notched-outline > * {
-    border-color: green !important;
+  form {
+    color: green;
+  }
+
+  i {
+    width: 2px;
+    position: relative;
+    right: 30px;
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 1;
+    color: #03045fc7;
   }
