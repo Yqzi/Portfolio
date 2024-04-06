@@ -1,18 +1,17 @@
 <div class="contact">
     <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
 
-
+        
         <div class="form-group">
-            <label for="name">Name</label><br>
+            <label for="name" class="label">Name</label><br>
             <input type="text" class="form-control" id="name" formControlName="name">
-            <i class="fa fa-book"></i>
             <div *ngIf="contactForm?.get('name')?.invalid && contactForm?.get('name')?.touched" class="text-danger">
               Name is required.
             </div>
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label><br>
+            <label for="email" class="label">Email</label><br>
             <input type="email" class="form-control" id="email" formControlName="email">
             <div *ngIf="contactForm?.get('email')?.invalid && contactForm?.get('email')?.touched" class="text-danger">
               Please enter a valid email.
@@ -20,7 +19,7 @@
         </div>
 
         <div class="form-group">
-            <label for="number">Phone Number</label><br>
+            <label for="number" class="label">Phone Number</label><br>
             <input type="tel" class="form-control" id="number" formControlName="number">
             <div *ngIf="contactForm?.get('number')?.invalid && contactForm?.get('number')?.touched" class="text-danger">
               Please enter a valid phone number.
@@ -28,11 +27,21 @@
         </div>
 
         <div class="form-group">
-            <label for="message">Message</label><br>
-            <input type="text" class="form-control" id="message">
+            <label for="message" class="label">Message</label><br>
+            <textarea name="message" class="form-control message" id="message" cols="30" rows="10" formControlName="message"></textarea>
         </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        
+        <div class="container">
+          <button type="submit" class="button type--A" [disabled]="!contactForm.valid">
+            <div class="button__line"></div>
+            <div class="button__line"></div>
+            <span class="button__text" *ngIf="contactForm.valid">SUBMIT</span>
+            <span class="button__text" *ngIf="!contactForm.valid">NO</span>
+            <div class="button__drow1"></div>
+            <div class="button__drow2"></div>
+          </button>
+        </div>
+       
 
     </form>
 </div>

@@ -38,4 +38,5 @@ export class AppComponent {
     this.user = User.Yusuf();
     this.options = Skills.getOptions();
    }
+
 }

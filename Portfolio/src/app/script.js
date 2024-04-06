@@ -8,9 +8,11 @@ let myName = document.getElementById("name")
 
 window.addEventListener('scroll', () => {
   let value = window.scrollY;
-  if (value > 750) value = 750;
-
-  
+  let x = myName;
+  if (value > 750) {
+    value = 750;
+    myName.remove();
+  }
 
   let bgY = -210 + value * 0.26;
   if (bgY < 0) {
