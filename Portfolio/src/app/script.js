@@ -11,7 +11,9 @@ window.addEventListener('scroll', () => {
   let x = myName;
   if (value > 750) {
     value = 750;
-    myName.remove();
+    myName.style.visibility = 'hidden';
+  } else {
+    myName.style.visibility = 'visible';
   }
 
   let bgY = -210 + value * 0.26;
