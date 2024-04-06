@@ -27,7 +27,7 @@
         <div class="grid grid-rows-1 grid-flow-col gap-16">
             <div>
                 <div class="sub-heading">{{ user.name.toUpperCase() }}</div>
-                <p>{{ user.bio }}</p>
+                <p class="bio">{{ user.bio }}</p>
             </div>
             <div class="grid grid-rows-2 grid-flow-col gap-2.5">
                 <app-exp-card [years]="77"></app-exp-card>
@@ -38,12 +38,16 @@
         </div>
         
         <!-- MY SKILLS SECTION -->
-        <div class="grid grid-rows-2 grid-flow-col my-skills">
+        <div class="skills">
+            <div class="sub-heading">MY SKILLS</div>
+           <div class="grid grid-rows-2 grid-flow-col my-skills">
             <div class="skill-div" *ngFor="let skill of skills">
                 <circle-progress [options]="options" [percent]="skill[1]"></circle-progress>
                 <p>{{ skill[0] }}</p>
             </div>
+        </div> 
         </div>
+        
 
         <!-- EXP AND EDUCATION -->
         <div class="experience">
@@ -60,24 +64,76 @@
 
         <div class="contact">
             <div class="heading">CONTACT</div>
-            <div class="grid grid-rows-1 grid-flow-col">
+            <div class="grid grid-rows-1 grid-flow-col form">
                 <div class="contact-desc">
                     <div class="sub-heading">PROJECT DISCUSSION?</div>
-                    <p class="contact-details">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
-                    <div class="grid grid-rows-1 grid-flow-col">
-                        <mat-icon>email</mat-icon>
-                        email
-                    </div>
-                    <div class="grid grid-rows-1 grid-flow-col">
-                        <mat-icon>call</mat-icon>
-                        number
+                    <div class="contact-details">
+                        <p>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+                        <div class="flex">
+                            <mat-icon class="personal">call</mat-icon>
+                            <p>0123-4567890</p>
+                        </div>
+                        <div class="flex">
+                            <mat-icon class="personal">email</mat-icon>
+                            <p>yourdetail&#64;email.com</p>
+                        </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <app-contact-form> </app-contact-form>
                 </div>
             </div>
+        </div>
 
+    </div>
+
+    <div class="footer">
+        <div class="flex about-me">
+
+            <div class="details">
+                <div class="headline">ABOUT ME</div>
+                <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                <div class="socials">
+                    <mat-icon>copyright</mat-icon>
+                    <mat-icon>copyright</mat-icon>
+                    <mat-icon>copyright</mat-icon>
+                </div>
+            </div>
+    
+            <div class="services">
+                <div class="sub-heading">Services</div>
+                <p>App Designing</p>
+                <p>App Development</p>
+                <p>App Redesigning</p>
+            </div>
+    
+            <div class="Pages">
+                <div class="sub-heading">Pages</div>
+                <p>About Us</p>
+                <p>Our Apps</p>
+                <p>FAQ</p>
+                <p>Contact Us</p>
+            </div>
+    
+            <div class="Information">
+                <div class="sub-heading">Information</div>
+                <div class="flex">
+                    <mat-icon class="personal">call</mat-icon>
+                    <p>0123-4567890</p>
+                </div>
+                <div class="flex">
+                    <mat-icon class="personal">email</mat-icon>
+                    <p>yourdetail&#64;email.com</p>
+                </div>
+            </div>
+    
+        </div>
+    
+        <div class="flex rights">
+            <mat-icon class="rights">copyright</mat-icon>
+            <p class="rights">2024 All rights reserved</p>
         </div>
     </div>
+   
+
 </div>

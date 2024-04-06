@@ -6,7 +6,6 @@
 
 #back {
     background-color: black;
-    min-height: 11750px;
 }
 
 header {
@@ -167,12 +166,20 @@ section>img#cliff {
     margin-bottom: 24px;
   }
 
+  .bio {
+    max-width: 500px;
+  }
+
  .grid {
   align-items: center;
  }
 
+ .skills {
+  margin-top: 150px;
+ }
+
  .my-skills {
-  margin-top: 280px;
+  margin-top: 60px;
   padding-left: 89px;
   padding-right: 85px;
   justify-items: center;
@@ -186,12 +193,17 @@ section>img#cliff {
  }
 
  .experience {
-  margin-top: 100px;
+  margin-top: 150px;
+  margin-left: auto;
  }
 
  .contact {
-  margin-top: 380px;
+  margin-top: 250px;
   color: white;
+ }
+
+ .form {
+  justify-content: space-evenly;
  }
 
  .heading {
@@ -204,10 +216,61 @@ section>img#cliff {
 
  .contact-details {
   width: 383px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
  }
 
  .exp-details {
-  justify-content: center;
+  justify-items: center;
+  padding-top: 16px;
  }
 
- 
+ .about-me {
+  background-color: #25252580;
+  color: white;
+  height: 385px;
+  width: 100%;
+  margin-top: 180px;
+  padding: 60px 200px;
+  justify-content: space-evenly;
+  
+  .headline {
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+  }
+
+  .details {
+    width: 300px;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  .socials {
+    display: flex;
+    gap: 30px;
+    height: 40px;
+  }
+
+ }
+
+ .rights {
+  height: 40px;
+  color: #848484;
+  font-size: 19px;
+  line-height: 29px;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+ }
+
+ .personal {
+  margin-right: 10px;
+ }
+
+ /* blue = #222f33
+ yellow = #766642
+  */
