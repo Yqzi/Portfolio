@@ -166,6 +166,12 @@ section>img#cliff {
     margin-bottom: 24px;
   }
 
+  .headline-2 {
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   .bio {
     max-width: 500px;
   }
@@ -257,20 +263,6 @@ section>img#cliff {
 
  }
 
- .rights {
-  height: 40px;
-  color: #848484;
-  font-size: 19px;
-  line-height: 29px;
-  justify-content: center;
-  text-align: center;
-  align-content: center;
- }
-
  .personal {
   margin-right: 10px;
  }
-
- /* blue = #222f33
- yellow = #766642
-  */

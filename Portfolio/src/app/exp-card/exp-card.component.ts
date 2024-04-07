@@ -9,5 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class ExpCardComponent {
   @Input('years') years: number;
+  @Input('desc') desc: string = 'Years of experience';
   
 }

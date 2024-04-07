@@ -1,13 +1,13 @@
 export class Skills {
 
-  static getOptions() {
+  static getOptions(color) {
     return {
       percent: 0,
       radius: 59,
       outerStrokeWidth: 15,
       innerStrokeWidth: 15,
       space: -15,
-      outerStrokeColor: "#4882c2",
+      outerStrokeColor: color,
       innerStrokeColor: "rgba(255, 255, 255, 0.1)",
       subtitleColor: "white",
       subtitleFontSize: "25",
@@ -19,13 +19,13 @@ export class Skills {
       clockwise: false,
       animationDuration: 1000,
       startFromZero: true,
-      outerStrokeGradient: true,
-      outerStrokeGradientStopColor: '#53a9ff',
+      outerStrokeGradientStopColor: color,
       lazy: true,
       subtitleFormat: (percent: number): string => {
         return `${percent}%`;
       }
     }
+    
   }
 
 }
