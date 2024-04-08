@@ -1,6 +1,6 @@
 import {  Component, ModuleWithProviders, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, ExtraOptions, RouterModule, RouterOutlet } from '@angular/router';
 import { ExpCardComponent } from './exp-card/exp-card.component';
 import { User } from './user.model';
 import { Skills } from "./skills";
@@ -8,7 +8,12 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ExpDetailsComponent } from './exp-details/exp-details.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { AppRoutingModule } from './app.routing.module';
+
+const extraOption: ExtraOptions = {
+  scrollPositionRestoration: 'enabled',
+  anchorScrolling: 'enabled',
+  onSameUrlNavigation: 'reload',
+}
 
 @Component({
   selector: 'app-root',
@@ -23,7 +28,7 @@ import { AppRoutingModule } from './app.routing.module';
     ExpDetailsComponent,
     MatIconModule,
     ContactFormComponent,
-    AppRoutingModule,
+    RouterModule,
   ],
   providers: [
     (
@@ -31,7 +36,9 @@ import { AppRoutingModule } from './app.routing.module';
     ).providers!,
   ],
 })
+
 export class AppComponent implements OnInit {
+
   skills = [
     ['FLUTTER', 80],
     ['ANGULAR', 45],
@@ -60,5 +67,9 @@ export class AppComponent implements OnInit {
 
   jumpTo(section) {
     document.getElementById(section).scrollIntoView({behavior: 'smooth'})
+  }
+
+  newTab(url) {
+    window.open(url);
   }
 }

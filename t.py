@@ -1,6 +1,6 @@
 from PIL import Image
 
-img = Image.open('Portfolio/src/assets/images/golden-ratio-30822.png')
+img = Image.open('app-store.png')
 pixels = img.load() # create the pixel map
 
 for i in range(img.size[0]):    # for every col:

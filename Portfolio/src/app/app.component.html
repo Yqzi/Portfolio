@@ -8,7 +8,7 @@
             <ul>
                 <!-- <li><a href="#">Home</a></li> -->
                 <li><a routerLink="/" fragment="home">Home</a></li>
-                <li><a routerLink="/" fragment="about-me">About Me</a></li>
+                <li><a routerLink="/" fragment="about-us">About Us</a></li>
                 <li><a routerLink="/" fragment="contact-us">Contact Us</a></li>
             </ul>
         </nav>
@@ -28,7 +28,7 @@
         <div class="grid grid-rows-1 grid-flow-col gap-16">
             <div>
                 <div class="sub-heading">{{ user.name.toUpperCase() }}</div>
-                <p class="bio">{{ user.bio }}</p>
+                <p class="bio" id="about-me">{{ user.bio }}</p>
             </div>
             <div class="grid grid-rows-2 grid-flow-col gap-2.5">
                 <app-exp-card [years]="4"></app-exp-card>
@@ -75,11 +75,11 @@
                         <span>Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</span>
                         <div class="flex">
                             <mat-icon class="personal">call</mat-icon>
-                            <p>0123-4567890</p>
+                            <p>(825) 439-9773</p>
                         </div>
                         <div class="flex">
                             <mat-icon class="personal">email</mat-icon>
-                            <p>yourdetail&#64;email.com</p>
+                            <p>y.qazi12&#64;gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -92,42 +92,41 @@
     </div>
 
     <div class="footer">
-        <div class="flex about-me" id="about-me">
+        <div class="flex about-me" id="about-us">
 
             <div class="details">
                 <div class="headline">ABOUT ME</div>
                 <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                 <div class="socials">
-                    <mat-icon>copyright</mat-icon>
-                    <mat-icon>copyright</mat-icon>
+                    <a href="" (click)="newTab('https://www.linkedin.com/in/yusuf-qazi-a96385292/')" class="social-icon"><i class="fa fa-linkedin" id="icon"></i></a>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAADKUlEQVR4nLWXy29PURDHP6VFtNUQrWrERroSIfqrhedGgsRCqKg/gERJxFu9EhIbEo+EFAkSz2DltbMRC7TEoyKCkGriGeLVeiWtjHyvTH/9/e7v3KpvcnLPnTNn5sw5M3Pm5JEc5cA4oBIYKFo78AS4C7zmP6AM2Ag0A5052n3xloYIzssxXgSsBFYDxaJ9B5qAF8Bbt8CRQDUwQLQvwE5gF9DWE6urgVZn2XlgLlCYY8E1wEU3zxaaSqq8VudqAq4DE3tgwBSgUTLaJTNYeYcm7gPys/D1z9L3KAAOSFZHyCKqneWrYvhOAD+BBcBC9Y/H8K9xO1EVd36tYtyfY6FPxWch90Z9C8M4NDifyOhHW8RwQ1sXh8UZws9ocShwPrEpfbAM+KzByeRGXyWdSPkd0UIc0/g/peeJjRqw8AnFZbeA6QnmRSFa74kPRJwXKGSmU34WOJxgETWady8ilCtEvskRCTjLh86rKzW3OSZkPYrEbzqHGWGWhF0NtGC5s36bUnT0vyxQxjXxz7Cfpfo5GTBxKPBB/K0unG6L9h4YEiDntPjr+gAlIr4KmGgWD1Z/vbtk9uhryrcGyHmpb4ktIBSjgUXq2/1wKi0z3lR/CTAmVGi+YtJQkTZmV/AE9z/WOZk54hk3ZseyV8do+eCc6oII1t+ubfe6PvqQ8k44IqDwSG9XgGMx47aD3ZwwT2FoZ/JD2emrrDgKTArdSuWSOuCRC2dz1F+K+VpdWhY174B+0v0HzTGJqFZnPDtwIVFWtbYuw/h8jVkq/4sNIl6gKypUWtnYYyDEaa0ke645dr8Mz5LCu6TiUncZ+W2vd9bMIRxRuu1ULRBhWrbLyLA5w3WckjWHSI4jwDOV8OjMm6TDjqkbClUshBQkPcFByW5x74luSLmSzPJAb2GtZFrmHJ+kKG0IqI7iUOAs71ANmbgsb1QlkxRT3Zm3JVEeocr5hLVL8u64mqFYce4fJi1xlXAe8TDHXKFQGuSeZreU5aKHaLmeZin3RrCw3gHs1m7+E0qVrCylRv6RqdmYZTjLH73yOM0EK6Mstke5B6tZazFvyu2dEIzfZuoMdw5efPkAAAAASUVORK5CYII=">
                     <mat-icon>copyright</mat-icon>
                 </div>
             </div>
     
             <div class="services">
                 <div class="sub-heading">Services</div>
-                <p>App Designing</p>
-                <p>App Development</p>
-                <p>App Redesigning</p>
+                <p>Web Development</p>
+                <p>IOS App Development</p>
+                <p>ANDROID App Development</p>
             </div>
     
             <div class="Pages">
                 <div class="sub-heading">Pages</div>
-                <p>About Us</p>
-                <p>Our Apps</p>
-                <p>FAQ</p>
-                <p>Contact Us</p>
+                <li><a routerLink="/" fragment="about-me">About Me</a></li>
+                <li><a routerLink="/" fragment="our-apps">Our Apps</a></li>
+                <li><a routerLink="/" fragment="contact-us">Contact Us</a></li>
             </div>
     
             <div class="Information">
                 <div class="sub-heading">Information</div>
                 <div class="flex">
                     <mat-icon class="personal">call</mat-icon>
-                    <p>0123-4567890</p>
+                    <p>(825) 439-9773</p>
                 </div>
                 <div class="flex">
                     <mat-icon class="personal">email</mat-icon>
-                    <p>yourdetail&#64;email.com</p>
+                    <p>y.qazi12&#64;gmail.com</p>
                 </div>
             </div>
     

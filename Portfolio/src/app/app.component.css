@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
 * {
     margin: 0;
     padding: 0;
@@ -255,6 +258,11 @@ section>img#cliff {
     margin-bottom: 30px;
   }
 
+  li {
+    margin-bottom: 30px;
+    list-style-type: none;
+  }
+
   .socials {
     display: flex;
     gap: 30px;
@@ -266,3 +274,25 @@ section>img#cliff {
  .personal {
   margin-right: 10px;
  }
+
+.fa-linkedin {
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #007bb5;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4em;
+    align-content: center;
+    text-align: center;
+}
+.fa-linkedin:hover {
+    background-color: #0073a4;
+}
+
+img {
+  color: white;
+}
