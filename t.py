@@ -5,7 +5,7 @@ pixels = img.load() # create the pixel map
 
 for i in range(img.size[0]):    # for every col:
     for j in range(img.size[1]):    # For every row
-        if (pixels[i, j][-1] > 100):
-            pixels[i,j] = (255, 50) # set the colour accordingly
+        if (pixels[i, j][-1] > 200):
+            pixels[i,j] = (255, 255, 255, 255) # set the colour accordingly
 
-img.show()
+img.save('app.png')

@@ -293,6 +293,29 @@ section>img#cliff {
     background-color: #0073a4;
 }
 
-img {
+.app-store {
+  height: 40px;
+  width: 40px;
+}
+
+.headline-3 {
+  font-family: serif;
+  font-size: 128px;
+  line-height: 1.16;
+  font-weight: 100;
+}
+
+.portfolio {
   color: white;
+  margin-top: 150px;
+
+  .line {
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    opacity: 0.6;
+    margin-top: 48px;
+    margin-bottom: 66px;
+  }
+
 }
