@@ -8,7 +8,7 @@
 }
 
 #back {
-    background-color: black;
+    background: #000;
 }
 
 header {
@@ -320,11 +320,12 @@ section>img#cliff {
 
 }
 
-.gallery {
+/* .gallery {
 
   .flex {
     gap: 25px;
     width: fit-content;
+    flex-wrap: nowrap;
   }
 
   .space {
@@ -337,11 +338,39 @@ section>img#cliff {
 
 .br {
   height: 100%;
-  width: 950px;
+  width: 100%;
+  flex-basis: 100%;
+  background-color: blue;
   border: solid;
+  margin-left: 25px;
+
+  img {
+  }
 }
 
 .gr {
   height: 250px;
+} */
+
+.gallery {
+  display: flex;
+  height: 524px;
+  gap: 24px;
 }
 
+.gallery-section {
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 24px;
+  height: 100%;
+}
+
+.image {
+  filter: brightness(80%);
+}
+
+.image:hover, .image-large:hover {
+  filter: brightness(110%);
+}
