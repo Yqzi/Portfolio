@@ -8,6 +8,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ExpDetailsComponent } from './exp-details/exp-details.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 
 const extraOption: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -29,6 +30,7 @@ const extraOption: ExtraOptions = {
     MatIconModule,
     ContactFormComponent,
     RouterModule,
+    PhotoGalleryComponent
   ],
   providers: [
     (
