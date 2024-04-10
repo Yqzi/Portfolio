@@ -1,7 +1,7 @@
 <div id="back">
     <header>
         <a href="#" class="logo">
-            <img src="../assets/images/yq.png">
+            <img src="../assets/images/yq.png" />
         </a>
         <nav class="navigation">
             <ul>
@@ -14,8 +14,8 @@
     </header>
     <div class="divider" id="home">
         <section id="parallax">
-            <img src="../assets/images/coolmountain.jpg" id="bg">
-            <img src="../assets/images/coolcliff.png" id="cliff">
+            <img src="../assets/images/coolmountain.jpg" id="bg" />
+            <img src="../assets/images/coolcliff.png" id="cliff" />
             <h1 id="name">Yusuf Qazi</h1>
             <div class="grad" id="grad"></div>
         </section>
@@ -31,134 +31,191 @@
             </div>
             <div class="grid grid-rows-2 grid-flow-col gap-2.5">
                 <app-exp-card [years]="4"></app-exp-card>
-                <app-exp-card [years]="1" desc="Websites crafted"></app-exp-card>
+                <app-exp-card
+                    [years]="1"
+                    desc="Websites crafted"
+                ></app-exp-card>
                 <app-exp-card [years]="5" desc="Apps completed"></app-exp-card>
-                <app-exp-card [years]="2" desc="Projects in progress"></app-exp-card>
+                <app-exp-card
+                    [years]="2"
+                    desc="Projects in progress"
+                ></app-exp-card>
+            </div>
+        </div>
+
+        <!-- MY SKILLS SECTION -->
+        <div class="skills">
+            <div class="sub-heading">MY SKILLS</div>
+            <div class="grid grid-rows-2 grid-flow-col my-skills">
+                <div
+                    class="skill-div"
+                    *ngFor="let skill of skills; let i = index"
+                >
+                    <circle-progress
+                        [options]="i < 4 ? options : options2"
+                        [percent]="skill[1]"
+                    ></circle-progress>
+                    <p>{{ skill[0] }}</p>
+                </div>
             </div>
         </div>
 
         <!-- PORTFOLIO -->
         <div class="portfolio">
-            <div class="headline-3">Portfolio</div>
-            <div class="line"></div>
+            <div class="sub-heading">Portfolio</div>
             <div class="gallery flex">
                 <div class="gallery-section">
                     <div class="gallery-section">
-                        <img class="image" src="assets/images/phone1.png" alt="">
-                        <img class="image" src="assets/images/phone3.png" alt="">
+                        <img
+                            class="image"
+                            src="assets/images/phone1.png"
+                            alt=""
+                        />
+                        <img
+                            class="image"
+                            src="assets/images/phone3.png"
+                            alt=""
+                        />
                     </div>
                     <div class="gallery-section">
-                        <img class="image" src="assets/images/phone2.png" alt="">
-                        <img class="image" src="assets/images/phone3.png" alt="">
+                        <img
+                            class="image"
+                            src="assets/images/phone2.png"
+                            alt=""
+                        />
+                        <img
+                            class="image"
+                            src="assets/images/phone4.png"
+                            alt=""
+                        />
                     </div>
                 </div>
                 <div class="gallery-section">
-                    <img class="image-large" src="assets/images/gallery1.png" alt="">
+                    <img
+                        class="image-large image"
+                        src="assets/images/gallery1.png"
+                        alt=""
+                    />
                 </div>
             </div>
         </div>
 
-            <!-- MY SKILLS SECTION -->
-            <div class="skills">
-                <div class="sub-heading">MY SKILLS</div>
-                <div class="grid grid-rows-2 grid-flow-col my-skills">
-                    <div class="skill-div" *ngFor="let skill of skills; let i = index">
-                        <circle-progress [options]="i < 4 ? options : options2" [percent]="skill[1]"></circle-progress>
-                        <p>{{ skill[0] }}</p>
-                    </div>
-                </div>
+        <!-- EXP AND EDUCATION -->
+        <div class="experience">
+            <div class="sub-heading">EXPERIENCE</div>
+            <div class="grid grid-rows-3 grid-flow-col exp-details">
+                <!-- <p class="headline-2">
+                    Cross-platform Time Management and Notification App
+                </p> -->
+                <app-exp-details
+                    startDate="2024 JAN"
+                    EndDate="APR"
+                    skillDesc="Integrated API’s in order to obtain user specific information for the user with respect to their location."
+                ></app-exp-details>
+                <app-exp-details
+                    startDate="2024 JAN"
+                    EndDate="APR"
+                    skillDesc="Implemented native notification support with the local_notifications package to set dynamically configured alarms."
+                ></app-exp-details>
+                <app-exp-details
+                    startDate="2024 JAN"
+                    EndDate="APR"
+                    skillDesc="Configured headless tasks to run asynchronously in the background to fetch cached location data and update alarm settings"
+                ></app-exp-details>
+                <!-- <p class="headline-2">
+                    Habit Development and Personal Growth Application
+                </p> -->
+                <app-exp-details
+                    startDate="2023 JUN"
+                    EndDate="AUG"
+                    skillDesc="Saved user preferences and other miscellaneous data in a kay-value storage utilizing the shared_preferences package"
+                ></app-exp-details>
+                <app-exp-details
+                    startDate="2023 JUN"
+                    EndDate="AUG"
+                    skillDesc="Persisted highly related data in a schema-full database using SQlite."
+                ></app-exp-details>
+                <app-exp-details
+                    startDate="2023 JUN"
+                    EndDate="AUG"
+                    skillDesc=" Developed a backend authentication system in Python using FastApi."
+                ></app-exp-details>
             </div>
+        </div>
 
-
-            <!-- EXP AND EDUCATION -->
-            <div class="experience">
-                <div class="sub-heading">EXPERIENCE & EDUCATION</div>
-                <div class="grid grid-rows-4 grid-flow-col exp-details">
-                    <p class="headline-2">Cross-platform Time Management and Notification App</p>
-                    <app-exp-details startDate="2023 JAN" EndDate="APR"
-                        skillDesc="Integrated API’s in order to obtain user specific information for the user with respect to their location."></app-exp-details>
-                    <app-exp-details startDate="2023 JAN" EndDate="APR"
-                        skillDesc="Implemented native notification support with the local_notifications package to set dynamically configured alarms."></app-exp-details>
-                    <app-exp-details startDate="2023 JAN" EndDate="APR"
-                        skillDesc="Configured headless tasks to run asynchronously in the background to fetch cached location data and update alarm settings"></app-exp-details>
-                    <p class="headline-2">Habit Development and Personal Growth Application</p>
-                    <app-exp-details startDate="2023 JUN" EndDate="AUG"
-                        skillDesc="Saved user preferences and other miscellaneous data in a kay-value storage utilizing the shared_preferences package"></app-exp-details>
-                    <app-exp-details startDate="2023 JUN" EndDate="AUG"
-                        skillDesc="Persisted highly related data in a schema-full database using SQlite."></app-exp-details>
-                    <app-exp-details startDate="2023 JUN" EndDate="AUG"
-                        skillDesc=" Developed a backend authentication system in Python using FastApi."></app-exp-details>
-                </div>
-            </div>
-
-            <!-- CONTACT FORM -->
-            <div class="contact" id="contact-us">
-                <div class="heading">CONTACT</div>
-                <div class="grid grid-rows-1 grid-flow-col form">
-                    <div class="contact-desc">
-                        <div class="sub-heading">PROJECT DISCUSSION?</div>
-                        <div class="contact-details">
-                            <span>Feel free to get in touch with me. I am always open to discussing new projects,
-                                creative ideas or opportunities to be part of your visions.</span>
-                            <div class="flex">
-                                <mat-icon class="personal">call</mat-icon>
-                                <p>(825) 439-9773</p>
-                            </div>
-                            <div class="flex">
-                                <mat-icon class="personal">email</mat-icon>
-                                <p>y.qazi12&#64;gmail.com</p>
-                            </div>
+        <!-- CONTACT FORM -->
+        <div class="contact" id="contact-us">
+            <div class="heading">CONTACT</div>
+            <div class="grid grid-rows-1 grid-flow-col form">
+                <div class="contact-desc">
+                    <div class="sub-heading">PROJECT DISCUSSION?</div>
+                    <div class="contact-details">
+                        <span>
+                            Feel free to get in touch with me. I am always open
+                            to discussing new projects, creative ideas or
+                            opportunities to be part of your visions.
+                        </span>
+                        <div class="flex">
+                            <mat-icon class="personal">email</mat-icon>
+                            <p>y.qazi12&#64;gmail.com</p>
                         </div>
                     </div>
-                    <div class="contact-form">
-                        <app-contact-form> </app-contact-form>
-                    </div>
                 </div>
-            </div>
-
-        </div>
-
-        <div class="footer">
-            <div class="flex about-me" id="about-us">
-
-                <div class="details">
-                    <div class="headline">ABOUT ME</div>
-                    <p>I'm a detail-oriented software engineer with 3+ years of experience. I'm passionate about using
-                        cutting-edge tech to develop high-quality software solutions while adhering to established
-                        methodologies.</p>
-                    <div class="socials">
-                        <a href="" (click)="newTab('https://www.linkedin.com/in/yusuf-qazi-a96385292/')"
-                            class="social-icon"><i class="fa fa-linkedin" id="icon"></i></a>
-                        <a href="" class="social-icon"><img class="app-store" src="assets/images/app.png"></a>
-                    </div>
+                <div class="contact-form">
+                    <app-contact-form> </app-contact-form>
                 </div>
-
-                <div class="services">
-                    <div class="sub-heading">Services</div>
-                    <p>Web Development</p>
-                    <p>IOS App Development</p>
-                    <p>ANDROID App Development</p>
-                </div>
-
-                <div class="Pages">
-                    <div class="sub-heading">Pages</div>
-                    <li><a routerLink="/" fragment="about-me">About Me</a></li>
-                    <li><a routerLink="/" fragment="our-apps">Our Apps</a></li>
-                    <li><a routerLink="/" fragment="contact-us">Contact Us</a></li>
-                </div>
-
-                <div class="Information">
-                    <div class="sub-heading">Information</div>
-                    <div class="flex">
-                        <mat-icon class="personal">call</mat-icon>
-                        <p>(825) 439-9773</p>
-                    </div>
-                    <div class="flex">
-                        <mat-icon class="personal">email</mat-icon>
-                        <p>y.qazi12&#64;gmail.com</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
+
+    <div class="footer">
+        <div class="flex about-me" id="about-us">
+            <div class="details">
+                <div class="headline">ABOUT US</div>
+                <p>
+                    With 3+ years of detail-oriented software engineering. We
+                    are passionate about using cutting-edge tech to develop
+                    high-quality software solutions while adhering to
+                    established methodologies.
+                </p>
+                <div class="socials">
+                    <a
+                        href=""
+                        (click)="
+                            newTab(
+                                'https://www.linkedin.com/in/yusuf-qazi-a96385292/'
+                            )
+                        "
+                        class="social-icon"
+                        ><i class="fa fa-linkedin" id="icon"></i
+                    ></a>
+                    <a href="" class="social-icon"
+                        ><img class="app-store" src="assets/images/app.png"
+                    /></a>
+                </div>
+            </div>
+
+            <div class="services">
+                <div class="sub-heading">Services</div>
+                <p>Web Development</p>
+                <p>IOS App Development</p>
+                <p>ANDROID App Development</p>
+            </div>
+
+            <div class="Pages">
+                <div class="sub-heading">Pages</div>
+                <li><a routerLink="/" fragment="about-me">About Me</a></li>
+                <li><a routerLink="/" fragment="our-apps">Our Apps</a></li>
+                <li><a routerLink="/" fragment="contact-us">Contact Us</a></li>
+            </div>
+
+            <div class="Information">
+                <div class="sub-heading">Information</div>
+                <div class="flex">
+                    <mat-icon class="personal">email</mat-icon>
+                    <p>y.qazi12&#64;gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
