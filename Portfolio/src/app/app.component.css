@@ -230,6 +230,10 @@ p {
     gap: 30px;
 }
 
+.contact-desc {
+    max-width: 429px;
+}
+
 .heading {
     text-align: center;
     /* font-size: 190px; */
@@ -239,10 +243,14 @@ p {
 }
 
 .contact-details {
-    width: 383px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.contact-form {
+    max-width: 429px;
 }
 
 .exp-details {
