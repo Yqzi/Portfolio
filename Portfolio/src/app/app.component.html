@@ -5,7 +5,6 @@
         </a>
         <nav class="navigation">
             <ul>
-                <!-- <li><a href="#">Home</a></li> -->
                 <li><a routerLink="/" fragment="home">Home</a></li>
                 <li><a routerLink="/" fragment="about-us">About Us</a></li>
                 <li><a routerLink="/" fragment="contact-us">Contact Us</a></li>
@@ -24,35 +23,54 @@
     <div id="down-arrow"></div>
     <div class="body">
         <!-- ABOUT ME SECTION -->
-        <div class="grid grid-rows-1 grid-flow-col gap-16">
+        <div class="about-me">
             <div>
                 <div class="sub-heading">{{ user.name.toUpperCase() }}</div>
                 <p class="bio" id="about-me">{{ user.bio }}</p>
             </div>
-            <div class="grid grid-rows-2 grid-flow-col gap-2.5">
-                <app-exp-card [years]="4"></app-exp-card>
-                <app-exp-card
-                    [years]="1"
-                    desc="Websites crafted"
-                ></app-exp-card>
-                <app-exp-card [years]="5" desc="Apps completed"></app-exp-card>
-                <app-exp-card
-                    [years]="2"
-                    desc="Projects in progress"
-                ></app-exp-card>
+            <div class="cards">
+                <div class="">
+                    <app-exp-card [years]="4"></app-exp-card>
+                    <app-exp-card
+                        [years]="1"
+                        desc="Websites crafted"
+                    ></app-exp-card>
+                </div>
+                <div class="">
+                    <app-exp-card
+                        [years]="5"
+                        desc="Apps completed"
+                    ></app-exp-card>
+                    <app-exp-card
+                        [years]="2"
+                        desc="Projects in progress"
+                    ></app-exp-card>
+                </div>
             </div>
         </div>
 
         <!-- MY SKILLS SECTION -->
         <div class="skills">
             <div class="sub-heading">MY SKILLS</div>
-            <div class="grid grid-rows-2 grid-flow-col my-skills">
+            <div class="my-skills">
                 <div
                     class="skill-div"
-                    *ngFor="let skill of skills; let i = index"
+                    *ngFor="let skill of skills1; let i = index"
                 >
                     <circle-progress
-                        [options]="i < 4 ? options : options2"
+                        [options]="i < 2 ? options : options2"
+                        [percent]="skill[1]"
+                    ></circle-progress>
+                    <p>{{ skill[0] }}</p>
+                </div>
+            </div>
+            <div class="my-skills">
+                <div
+                    class="skill-div"
+                    *ngFor="let skill of skills2; let i = index"
+                >
+                    <circle-progress
+                        [options]="i < 2 ? options : options2"
                         [percent]="skill[1]"
                     ></circle-progress>
                     <p>{{ skill[0] }}</p>
@@ -90,7 +108,7 @@
                         />
                     </div>
                 </div>
-                <div class="gallery-section">
+                <div class="gallery-section gallery-large">
                     <img
                         class="image-large image"
                         src="assets/images/gallery1.png"
@@ -103,50 +121,50 @@
         <!-- EXP AND EDUCATION -->
         <div class="experience">
             <div class="sub-heading">EXPERIENCE</div>
-            <div class="grid grid-rows-3 grid-flow-col exp-details">
-                <!-- <p class="headline-2">
-                    Cross-platform Time Management and Notification App
-                </p> -->
-                <app-exp-details
-                    startDate="2024 JAN"
-                    EndDate="APR"
-                    skillDesc="Integrated API’s in order to obtain user specific information for the user with respect to their location."
-                ></app-exp-details>
-                <app-exp-details
-                    startDate="2024 JAN"
-                    EndDate="APR"
-                    skillDesc="Implemented native notification support with the local_notifications package to set dynamically configured alarms."
-                ></app-exp-details>
-                <app-exp-details
-                    startDate="2024 JAN"
-                    EndDate="APR"
-                    skillDesc="Configured headless tasks to run asynchronously in the background to fetch cached location data and update alarm settings"
-                ></app-exp-details>
-                <!-- <p class="headline-2">
-                    Habit Development and Personal Growth Application
-                </p> -->
-                <app-exp-details
-                    startDate="2023 JUN"
-                    EndDate="AUG"
-                    skillDesc="Saved user preferences and other miscellaneous data in a kay-value storage utilizing the shared_preferences package"
-                ></app-exp-details>
-                <app-exp-details
-                    startDate="2023 JUN"
-                    EndDate="AUG"
-                    skillDesc="Persisted highly related data in a schema-full database using SQlite."
-                ></app-exp-details>
-                <app-exp-details
-                    startDate="2023 JUN"
-                    EndDate="AUG"
-                    skillDesc=" Developed a backend authentication system in Python using FastApi."
-                ></app-exp-details>
+            <div class="exp-details">
+                <div class="exp-detail">
+                    <app-exp-details
+                        startDate="2024 JAN"
+                        EndDate="APR"
+                        skillDesc="Integrated API’s in order to obtain user specific information for the user with respect to their location."
+                    ></app-exp-details>
+                    <app-exp-details
+                        startDate="2024 JAN"
+                        EndDate="APR"
+                        skillDesc="Implemented native notification support with the local_notifications package to set dynamically configured alarms."
+                    ></app-exp-details>
+                    <app-exp-details
+                        startDate="2024 JAN"
+                        EndDate="APR"
+                        skillDesc="Configured headless tasks to run asynchronously in the background to fetch cached location data and update alarm settings"
+                    ></app-exp-details>
+                </div>
+
+                <div class="exp-detail">
+                    <!-- SECOND SECTION -->
+                    <app-exp-details
+                        startDate="2023 JUN"
+                        EndDate="AUG"
+                        skillDesc="Saved user preferences and other miscellaneous data in a kay-value storage utilizing the shared_preferences package"
+                    ></app-exp-details>
+                    <app-exp-details
+                        startDate="2023 JUN"
+                        EndDate="AUG"
+                        skillDesc="Persisted highly related data in a schema-full database using SQlite."
+                    ></app-exp-details>
+                    <app-exp-details
+                        startDate="2023 JUN"
+                        EndDate="AUG"
+                        skillDesc=" Developed a backend authentication system in Python using FastApi."
+                    ></app-exp-details>
+                </div>
             </div>
         </div>
 
         <!-- CONTACT FORM -->
         <div class="contact" id="contact-us">
             <div class="heading">CONTACT</div>
-            <div class="grid grid-rows-1 grid-flow-col form">
+            <div class="form">
                 <div class="contact-desc">
                     <div class="sub-heading">PROJECT DISCUSSION?</div>
                     <div class="contact-details">
@@ -169,7 +187,7 @@
     </div>
 
     <div class="footer">
-        <div class="flex about-me" id="about-us">
+        <div class="flex about-us" id="about-us">
             <div class="details">
                 <div class="headline">ABOUT US</div>
                 <p>
