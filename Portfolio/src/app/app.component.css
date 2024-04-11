@@ -74,7 +74,7 @@ section {
     display: flex;
     position: fixed;
     justify-content: center;
-    font-size: 10em;
+    font-size: 8vw;
     text-transform: uppercase;
     font-family: "Protest Riot";
     width: 100%;
