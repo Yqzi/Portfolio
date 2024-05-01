@@ -13,7 +13,11 @@
     </header>
     <div class="divider" id="home">
         <section id="parallax">
-            <img src="assets/images/coolmountain.jpeg" id="bg" />
+            <img
+                src="assets/images/coolmountain.jpeg"
+                id="bg"
+                (load)="hideSplashAnimation()"
+            />
             <img src="assets/images/coolcliff.jpeg" id="cliff" />
             <h1 id="name">Yusuf Qazi</h1>
             <div class="grad" id="grad"></div>
