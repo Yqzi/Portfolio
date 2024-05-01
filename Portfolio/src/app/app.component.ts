@@ -86,13 +86,16 @@ export class AppComponent implements OnInit {
     readonly ANIMATION_DURATION = 1;
 
     private hideSplashAnimation() {
+        console.log('a');
         setTimeout(() => {
+            console.log('a');
             // Setting the transition
             this.splashTransition = `opacity ${this.ANIMATION_DURATION}s`;
             this.opacityChange = 0;
             // After the transition is ended the showSplash will be hided
             this.showSplash = false;
         }, 1000);
+        console.log('a');
     }
 
     ngOnInit(): void {
