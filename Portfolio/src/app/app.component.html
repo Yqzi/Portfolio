@@ -237,3 +237,29 @@
         </div>
     </div>
 </div>
+
+<div
+    *ngIf="showSplash"
+    class="app-splash-screen"
+    [ngStyle]="{ opacity: opacityChange, transition: splashTransition }"
+>
+    <div class="app-splash-content">
+        <div data-text="Redirecting ..." class="loading-text">
+            <div>
+                <div class="sody">
+                    <span
+                        ><span></span><span></span><span></span><span></span
+                    ></span>
+                    <div class="base">
+                        <span></span>
+                        <div class="face"></div>
+                    </div>
+                </div>
+                <div class="longfazers">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <h1>Redirecting</h1>
+            </div>
+        </div>
+    </div>
+</div>

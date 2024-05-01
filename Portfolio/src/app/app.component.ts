@@ -67,17 +67,39 @@ export class AppComponent implements OnInit {
         this.options2 = Skills.getOptions('#9b834d');
     }
 
-    ngOnInit(): void {
-        this.activatedRoute.fragment.subscribe((value) => {
-            this.jumpTo(value);
-        });
-    }
-
     jumpTo(section) {
         document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
     }
 
     newTab(url) {
         window.open(url);
+    }
+
+    // The screen starts with the maximum opacity
+    public opacityChange = 1;
+
+    public splashTransition;
+
+    // First access the splash is visible
+    public showSplash = true;
+
+    readonly ANIMATION_DURATION = 1;
+
+    private hideSplashAnimation() {
+        setTimeout(() => {
+            // Setting the transition
+            this.splashTransition = `opacity ${this.ANIMATION_DURATION}s`;
+            this.opacityChange = 0;
+            // After the transition is ended the showSplash will be hided
+            this.showSplash = false;
+        }, 1000);
+    }
+
+    ngOnInit(): void {
+        this.activatedRoute.fragment.subscribe((value) => {
+            this.jumpTo(value);
+        });
+
+        this.hideSplashAnimation();
     }
 }
